@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div style="width: 490px;">
+        <ul id="contain">
+            <div class="title">
+                <span>序列</span>
+                <span>监测站</span>
+                <span>水位</span>
+                <span>幅度</span>
+                <span>上报时间</span>
+            </div>
+        </ul>
+    </div>
+
+    <script>
+        let UL = document.getElementById('contain');
+        let dataList1 = [];
+        if(window.sessionStorage.getItem('data')){
+            dataList1  = window.sessionStorage.getItem('data')
+            dataList1 = JSON.parse(dataList1)
+            console.log(dataList1)
+        }
+        function ramdomValue(){
+            return Math.round(Math.random()*25)
+        }
+        var dataList = [
+            {List:1,Detection:'观音堂水库',Water:15,Range:'8-25',Time:13},
+            {List:2,Detection:'观音堂水库',Water:19,Range:'8-25',Time:13},
+            {List:3,Detection:'观音堂水库',Water:20,Range:'8-25',Time:13},
+            {List:4,Detection:'观音堂水库',Water:15,Range:'8-25',Time:13},
+            {List:5,Detection:'观音堂水库',Water:14,Range:'8-25',Time:13},
+            {List:6,Detection:'观音堂水库',Water:24,Range:'8-25',Time:13},
+            {List:7,Detection:'观音堂水库',Water:15,Range:'8-25',Time:13},
+            {List:8,Detection:'观音堂水库',Water:11,Range:'8-25',Time:13},
+            {List:9,Detection:'观音堂水库',Water:18,Range:'8-25',Time:13},
+            {List:10,Detection:'观音堂水库',Water:16,Range:'8-25',Time:13},
+            {List:11,Detection:'观音堂水库',Water:17,Range:'8-25',Time:13},
+            {List:12,Detection:'观音堂水库',Water:22,Range:'8-25',Time:13},
+            {List:13,Detection:'观音堂水库',Water:18,Range:'8-25',Time:13},
+            {List:14,Detection:'观音堂水库',Water:18,Range:'8-25',Time:13},
+            {List:15,Detection:'观音堂水库',Water:19,Range:'8-25',Time:13},
+            {List:16,Detection:'观音堂水库',Water:16,Range:'8-25',Time:13},
+            {List:17,Detection:'观音堂水库',Water:15,Range:'8-25',Time:13},
+            {List:18,Detection:'观音堂水库',Water:23,Range:'8-25',Time:13}
+        ]
+        window.sessionStorage.setItem('data',JSON.stringify(dataList) );
+        if(dataList1.length > 0){
+            dataList.map((val,index)=>{
+                console.log(dataList1[index].Water)
+                if(val.Water>dataList1[index].Water){
+                    console.log(val.Water,dataList1[index].Water,'大于')
+                            var Li = document.createElement('li');
+                            Li.innerHTML = `
+                                                <span>${val.List}</span>
+                                                <span>${val.Detection}</span>
+                                                <span><div class='sets'>${val.Water}m</div> <div class='one'></div></span>
+                                                <span>${val.Range}</span>
+                                                <span>${val.Time}时</span>
+                                            `
+                            UL.appendChild(Li)
+                }else{
+                    console.log(val.Water,dataList1[index].Water,'小于等于');
+                            var Li = document.createElement('li');
+                            Li.innerHTML = `
+                                                <span>${val.List}</span>
+                                                <span>${val.Detection}</span>
+                                                <span><div class='sets'>${val.Water}m</div> <div class='two'></div></span>
+                                                <span>${val.Range}</span>
+                                                <span>${val.Time}时</span>
+                                            `
+                            UL.appendChild(Li)
+                }
+            })
+        }
+        
+    </script>
+</body>
+</html>

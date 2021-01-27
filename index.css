@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+@font-face{
+    font-family: BlenderPro;
+    src: url(./assite/BlenderPro-Bold.otf),
+    url(./assite/BlenderPro-BoldItalic.otf),
+    url(./assite/BlenderPro-Book.otf),
+    url(./assite/BlenderPro-BookItalic.otf),
+    url(./assite/BlenderPro-Heavy.otf),
+    url(./assite/BlenderPro-Medium.otf),
+    url(./assite/BlenderPro-MediumItalic.otf);
+    font-family: SourceHanSansCN;
+    src: url(./assite/SourceHanSansCN-Bold.otf);
+}
+
+ul li{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    height: 30px;
+    padding: 5px 5px;
+ }
+
+ul li span:nth-child(1){
+    flex:1;
+    font-family: SourceHanSansCN;
+    color:#63E1FF;
+    font-size: 16px;
+    text-align: center;
+} 
+
+ul li span:nth-child(2){
+    flex:3;
+    font-family: BlenderPro;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+ul li span:nth-child(3){
+    flex:1;
+    font-family: SourceHanSansCN;
+    color:#fff;
+    font-size: 18px;
+    display: flex;
+}
+
+ul li span:nth-child(4){
+    flex:1;
+    font-family: SourceHanSansCN;
+    color:#fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+ul li span:nth-child(5){
+    flex:2;
+    font-family: SourceHanSansCN;
+    color:#fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+ul li span .one {
+    flex:1;
+    background:url(./images/6.png) no-repeat;
+    margin-top: 5px;
+}
+
+ul li span .two{
+    flex:1;
+    background:url(./images/7.png) no-repeat;
+    margin-top: 5px;
+
+}
+
+li {
+    display: flex;
+ }
+
+#contain .title {
+    display: flex;
+    height: 34px;
+}
+
+#contain .title  span{
+    flex: 1;
+    padding-top: 5px;
+    text-align: center;
+    font-family: BlenderPro;
+    color: #fff;
+    font-size: 20px;
+    background-color:#3681B5;
+}
+
+#contain .title span:nth-child(2) {
+    flex: 3;
+    margin-left:5px;
+    background-color:#3681B5;
+}
+
+#contain .title span:nth-child(3) {
+    flex: 1;
+    margin-left:5px;
+    background-color:#3681B5;
+}
+
+#contain .title span:nth-child(4) {
+    flex: 1;
+    margin-left:5px;
+    background-color:#3681B5;
+}
+
+#contain .title span:nth-child(5) {
+    flex: 2;
+    margin-left:5px;
+    background-color:#3681B5;
+}
+
+span{
+    flex: 1;
+ }
+ 
+ li:nth-child(odd){
+    background:-webkit-linear-gradient(top,rgba(102,103,132,0),rgba(102,103,132,.5));
+    
+ }
+ 
